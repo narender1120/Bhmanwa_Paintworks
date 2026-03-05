@@ -756,3 +756,97 @@ footer { background:var(--n0); padding:68px 0 0; border-top:1px solid var(--bd2)
   .why-exp     { padding:12px 14px }
   .why-exp-num { font-size:24px }
 }
+
+/* ============================================================
+   IMAGE RESPONSIVE — works on all screen sizes
+   ============================================================ */
+
+/* Global image rules */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+/* ── HERO BACKGROUND ── */
+#hero::before {
+  background-size: cover;
+  background-position: top center;
+}
+
+/* ── SERVICE CARDS ── */
+.sc-img-w {
+  width: 100%;
+  overflow: hidden;
+}
+.sc-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── GALLERY ── */
+.gi-inner {
+  width: 100%;
+  overflow: hidden;
+}
+.gi img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── WHY CHOOSE IMAGE ── */
+.why-img-box {
+  width: 100%;
+  overflow: hidden;
+}
+.why-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── BEFORE AFTER ── */
+.ba-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── TABLET 768px ── */
+@media(max-width: 768px) {
+  .sc-img-w { padding-bottom: 60%; }
+  .gi-inner  { padding-bottom: 65% !important; }
+  .why-img-box { padding-bottom: 60%; }
+
+  .sc-img-w img,
+  .why-img-box img { object-position: center top; }
+}
+
+/* ── MOBILE 480px ── */
+@media(max-width: 480px) {
+  .sc-img-w    { padding-bottom: 65%; }
+  .gi-inner    { padding-bottom: 70% !important; }
+  .why-img-box { padding-bottom: 65%; }
+
+  /* Service cards full width */
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* Gallery single column */
+  .gallery { grid-template-columns: 1fr; gap: 10px; }
+  .gi.tall { grid-row: span 1; }
+  .gi[style*="span 2"] { grid-column: span 1 !important; }
+}
+
+/* ── SMALL PHONES 360px ── */
+@media(max-width: 360px) {
+  .sc-img-w    { padding-bottom: 70%; }
+  .gi-inner    { padding-bottom: 75% !important; }
+  .why-img-box { padding-bottom: 70%; }
+}
